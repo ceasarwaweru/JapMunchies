@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "43192395387",
+    "firebase_url": "https://japmunchies.firebaseio.com",
+    "project_id": "japmunchies",
+    "storage_bucket": "japmunchies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43192395387:android:0b28cfcd4e3b3459",
+        "android_client_info": {
+          "package_name": "com.ceasar.japmunchies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43192395387-q7sr3nvrtu2472ak6bkaltrg7erv7cue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUmQ3oKbr0QvhjoAgV72mKsFOA68fFTyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43192395387-q7sr3nvrtu2472ak6bkaltrg7erv7cue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

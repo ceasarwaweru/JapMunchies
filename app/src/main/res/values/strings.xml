@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">JapMunchies</string>
+    <string name="signUpText">Create Your New Account</string>
+    <string name="nameText">Your name</string>
+    <string name="emailText">Your email</string>
+    <string name="signUpPasswordNote">Don\'t forget your password.</string>
+    <string name="passwordHintText">Your password</string>
+    <string name="confirmPasswordText">Confirm your password</string>
+    <string name="haveAccountQuestion">Don\'t have an account? Sign up here.</string>
+    <string name="settingUpAccountMessage">Setting up your account…</string>
+    <string name="confirmMessage">We\'ve just sent you a confirmation email. Head over to your inbox to verify and activate your account(Worry not, its only a one time thing).</string>
+    <string name="SignUpNoConnection">You need an internet connection to sign up.</string>
+    <string name="failedSignUp">We may not be able to continue with some of the details you\\\'ve passed. Perhaps that         email is already in use.</string>
+    <string name="confirmEmail">We\'ve sent you an email for verification. The app will automatically detect that you\'re verified and you will be able to access and use the app.</string>
 </resources>
