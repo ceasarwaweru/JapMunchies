@@ -12,4 +12,11 @@
     <string name="SignUpNoConnection">You need an internet connection to sign up.</string>
     <string name="failedSignUp">We may not be able to continue with some of the details you\\\'ve passed. Perhaps that         email is already in use.</string>
     <string name="confirmEmail">We\'ve sent you an email for verification. The app will automatically detect that you\'re verified and you will be able to access and use the app.</string>
+    <string name="signInText">Sign In.</string>
+    <string name="dontHaveAccountQuestion">Don\'t have an account? Sign up here.</string>
+    <string name="settingUpMessage2">Setting things up…</string>
+    <string name="LogInNoConnection">You need an internet connection to login.</string>
+    <string name="connectionDropped2">Your connection may have a few problems.</string>
+    <string name="failedLogin">You may have mistyped your email and/or password. The app is having a hard time authenticating you.</string>
+    <string name="reconfirmEmail">To continue, you need to first verify your email address. The app will automatically detect that you\'re verified and you\'ll be able to use the app.</string>
 </resources>

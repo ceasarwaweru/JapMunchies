@@ -5,7 +5,220 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/loginCoordinatorLayout"
     tools:context=".Activities.LoginActivity">
+
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:id="@+id/LoginRelative"
+        tools:context="com.bry.adcafe.ui.LoginActivity">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signInText"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:hint="@string/emailText"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/passwordEditText"
+                android:padding="10dp"
+                android:cursorVisible="true"
+                android:layout_marginBottom="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:hint="@string/passwordHintText"
+                android:inputType="textPassword"
+                android:cursorVisible="true"
+                android:nextFocusDown="@+id/passwordEditText"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/LogInCard"
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="0dp"
+                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:text="LOGIN."
+                    android:textSize="11sp"
+                    android:layout_height="wrap_content" />
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/LoginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/signInText"
+                android:visibility="gone"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/icons" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="@string/dontHaveAccountQuestion"
+                android:id="@+id/registerLink"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/signInText"-->
+        <!--android:textColor="@color/colorPrimaryDark"-->
+        <!--android:textSize="30sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:layout_above="@+id/linearLayout"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/LoginAvi"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            style="@style/AVLoadingIndicatorView"
+            android:visibility="gone"
+            app:indicatorName="LineScaleIndicator"
+            app:indicatorColor="@color/accent" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progressBarlogin"
+                style="?android:attr/progressBarStyle"
+                android:visibility="invisible"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/settingUpMessageLogin"
+            android:visibility="gone"
+            android:text="@string/settingUpMessage2"
+            android:textSize="10sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/noConnectionLayout"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:background="@drawable/ic_action_connection"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/LogInNoConnection"
+            android:textSize="11sp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="retry"
+            android:background="@null"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/failedLoadLayout"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:background="@drawable/ic_action_error"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/connectionDropped2"
+            android:textSize="11sp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/retryLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="retry"
+            android:background="@color/colorAccent"
+            android:textColor="@color/icons" />
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
