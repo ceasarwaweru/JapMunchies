@@ -34,6 +34,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = LoginActivity.class.getSimpleName();
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
         mRegisterLink.setOnClickListener(this);
         mLoginButton.setOnClickListener(this);
@@ -258,11 +260,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void checkIfUserIsAuthentic(){
-        if(checkIfEmailIsVerified()){
-            if(!isValidatePromptShowing)startNextActivity();
-        }else{
-            if(!isValidatePromptShowing)openNotVerifiedPrompt();
-        }
+//        if(checkIfEmailIsVerified()){
+//            if(!isValidatePromptShowing)startNextActivity();
+//        }else{
+//            if(!isValidatePromptShowing)openNotVerifiedPrompt();
+//        }
+        startNextActivity();
     }
 
     private void openNotVerifiedPrompt() {

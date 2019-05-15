@@ -27,15 +27,15 @@ public class Recipe {
     }
 
 
-    public String getmImageThumbnail() {
+    public String getImageThumbnail() {
         return mImageThumbnail;
     }
 
-    public void setmImageThumbnail(String mImageThumbnail) {
+    public void setImageThumbnail(String mImageThumbnail) {
         this.mImageThumbnail = mImageThumbnail;
     }
 
-    public Bitmap getmImageThumbnailBitmap() {
+    public Bitmap getImageThumbnailBitmap() {
         return mImageThumbnailBitmap;
     }
 
@@ -43,23 +43,23 @@ public class Recipe {
         this.mImageThumbnailBitmap = mImageThumbnailBitmap;
     }
 
-    public String getmName() {
+    public String getName() {
         return mName;
     }
 
-    public void setmName(String mName) {
+    public void setName(String mName) {
         this.mName = mName;
     }
 
-    public String getmRecipeId() {
+    public String getRecipeId() {
         return mRecipeId;
     }
 
-    public void setmRecipeId(String mRecipeId) {
+    public void setRecipeId(String mRecipeId) {
         this.mRecipeId = mRecipeId;
     }
 
-    public List<RecipeStep> getmRecipeSteps() {
+    public List<RecipeStep> getRecipeSteps() {
         return mRecipeSteps;
     }
 
@@ -67,19 +67,19 @@ public class Recipe {
         this.mRecipeSteps = mRecipeSteps;
     }
 
-    public String getmDescription() {
+    public String getDescription() {
         return mDescription;
     }
 
-    public void setmDescription(String mDescription) {
+    public void setDescription(String mDescription) {
         this.mDescription = mDescription;
     }
 
-    public List<Ingredient> getmRecipeIngredients() {
+    public List<Ingredient> getRecipeIngredients() {
         return mRecipeIngredients;
     }
 
-    public void setmRecipeIngredients(List<Ingredient> mRecipeIngredients) {
+    public void setRecipeIngredients(List<Ingredient> mRecipeIngredients) {
         this.mRecipeIngredients = mRecipeIngredients;
     }
 }

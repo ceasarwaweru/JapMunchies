@@ -17,35 +17,35 @@ public class Ingredient {
         this.mIngredientThumbnailBitmap = imageThumbBitmap;
     }
 
-    public String getmIngredientName() {
+    public String getIngredientName() {
         return mIngredientName;
     }
 
-    public void setmIngredientName(String mIngredientName) {
+    public void setIngredientName(String mIngredientName) {
         this.mIngredientName = mIngredientName;
     }
 
-    public String getmIngredientId() {
+    public String getIngredientId() {
         return mIngredientId;
     }
 
-    public void setmIngredientId(String mIngredientId) {
+    public void setIngredientId(String mIngredientId) {
         this.mIngredientId = mIngredientId;
     }
 
-    public String getmIngredientThumbnail() {
+    public String getIngredientThumbnail() {
         return mIngredientThumbnail;
     }
 
-    public void setmIngredientThumbnail(String mIngredientThumbnail) {
+    public void setIngredientThumbnail(String mIngredientThumbnail) {
         this.mIngredientThumbnail = mIngredientThumbnail;
     }
 
-    public Bitmap getmIngredientThumbnailBitmap() {
+    public Bitmap getIngredientThumbnailBitmap() {
         return mIngredientThumbnailBitmap;
     }
 
-    public void setmIngredientThumbnailBitmap(Bitmap mIngredientThumbnailBitmap) {
+    public void setIngredientThumbnailBitmap(Bitmap mIngredientThumbnailBitmap) {
         this.mIngredientThumbnailBitmap = mIngredientThumbnailBitmap;
     }
 }

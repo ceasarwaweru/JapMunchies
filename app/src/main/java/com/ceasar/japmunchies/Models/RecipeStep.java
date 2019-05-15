@@ -16,27 +16,27 @@ public class RecipeStep {
         this.mStepThumbnailBitmap = mStepThumbnailBitmap;
     }
 
-    public String getmStepExplanation() {
+    public String getStepExplanation() {
         return mStepExplanation;
     }
 
-    public void setmStepExplanation(String mStepExplanation) {
+    public void setStepExplanation(String mStepExplanation) {
         this.mStepExplanation = mStepExplanation;
     }
 
-    public String getmStepThumbnail() {
+    public String getStepThumbnail() {
         return mStepThumbnail;
     }
 
-    public void setmStepThumbnail(String mStepThumbnail) {
+    public void setStepThumbnail(String mStepThumbnail) {
         this.mStepThumbnail = mStepThumbnail;
     }
 
-    public Bitmap getmStepThumbnailBitmap() {
+    public Bitmap getStepThumbnailBitmap() {
         return mStepThumbnailBitmap;
     }
 
-    public void setmStepThumbnailBitmap(Bitmap mStepThumbnailBitmap) {
+    public void setStepThumbnailBitmap(Bitmap mStepThumbnailBitmap) {
         this.mStepThumbnailBitmap = mStepThumbnailBitmap;
     }
 }

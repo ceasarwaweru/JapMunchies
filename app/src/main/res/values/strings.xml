@@ -19,4 +19,5 @@
     <string name="connectionDropped2">Your connection may have a few problems.</string>
     <string name="failedLogin">You may have mistyped your email and/or password. The app is having a hard time authenticating you.</string>
     <string name="reconfirmEmail">To continue, you need to first verify your email address. The app will automatically detect that you\'re verified and you\'ll be able to use the app.</string>
+    <string name="recipe_name">Recipe Name</string>
 </resources>
