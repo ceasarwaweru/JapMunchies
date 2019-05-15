@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Constraints
+        android:id="@+id/constraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <SearchView
+        android:layout_width="344dp"
+        android:layout_height="41dp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <ImageView
+        android:layout_width="172dp"
+        android:layout_height="142dp"
+        android:src="@drawable/foodtwo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <ImageView
+        android:layout_width="189dp"
+        android:layout_height="92dp"
+        android:src="@drawable/foodthree"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <ImageView
+        android:layout_width="185dp"
+        android:layout_height="104dp"
+        android:src="@drawable/foodfour"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="188dp"
+        android:layout_height="178dp"
+        android:linksClickable="true"
+        android:text="The Japanese street food is so common to the people in the city, They enjoy it so much..."
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="187dp"
+        android:layout_height="174dp"
+        android:linksClickable="true"
+        android:text="Japanese mayai is very delicious and is a favorite meal to many women in Japan. It is..."
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="184dp"
+        android:layout_height="134dp"
+        android:linksClickable="true"
+        android:text="Matoke is a famous Japanes dish that was consumed by the women before they went to work..."
+        tools:layout_editor_absoluteX="190dp"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="81dp"
+        android:layout_height="43dp"
+        android:text="MORE"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Dishes"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="656dp" />
+
+
+</android.support.constraint.ConstraintLayout>
