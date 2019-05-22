@@ -1,6 +1,7 @@
 package com.ceasar.japmunchies.Models;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +14,20 @@ public class Recipe {
     private List<RecipeStep> mRecipeSteps = new ArrayList<>();
     private String mDescription;
     private List<Ingredient> mRecipeIngredients = new ArrayList<>();
+    private int imageId;
 
 
     public Recipe(){}
 
-    public Recipe(String imageThumbnail,String name, String recipeId, List<RecipeStep> steps,String Desc, List<Ingredient> ingredients){
+    public Recipe(String imageThumbnail, Bitmap imageBitmap, String name, String recipeId, List<RecipeStep> steps, String Desc, List<Ingredient> ingredients, int imageId){
         this.mImageThumbnail = imageThumbnail;
+        this.mImageThumbnailBitmap = imageBitmap;
         this.mName = name;
         this.mRecipeId = recipeId;
         this.mRecipeSteps = steps;
         this.mDescription = Desc;
         this.mRecipeIngredients = ingredients;
+        this.imageId = imageId;
     }
 
 
@@ -81,5 +85,13 @@ public class Recipe {
 
     public void setRecipeIngredients(List<Ingredient> mRecipeIngredients) {
         this.mRecipeIngredients = mRecipeIngredients;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

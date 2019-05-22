@@ -15,20 +15,81 @@
         android:layout_margin="20dp"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="55dp"
+        android:id="@+id/searchFoodLayout"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="28dp"
+            android:id="@+id/searchFoodCard"
+            app:cardPreventCornerOverlap="false"
+            app:cardElevation="0.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:id="@+id/searchIcon"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_action_search"
+                    android:layout_height="35dp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="3dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="45dp"
+                    android:background="@android:color/white"
+                    android:padding="10dp"
+                    android:ems="10"
+                    android:hint="Search here"
+                    android:cursorVisible="false"
+                    android:theme="@style/Autocomplete"
+                    android:textColor="@color/secondary_text"
+                    android:textColorHint="@color/colorPrimaryLight"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="140dp"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/featuredItemsRecyclerView"
             android:layout_width="match_parent"
+            android:nestedScrollingEnabled="false"
             android:layout_height="match_parent">
 
 
         </android.support.v7.widget.RecyclerView>
+
 
 
     </RelativeLayout>
@@ -37,6 +98,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_gravity="bottom"
+        android:visibility="gone"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -72,6 +134,80 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/bottomNavButtons"
+        android:visibility="visible"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/starButton"
+                android:layout_width="23dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="23dp"
+                android:background="@drawable/ic_action_star"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/starText"
+                android:layout_marginTop="30dp"
+                android:textSize="8dp"
+                android:layout_marginLeft="10dp"
+                android:text="Star"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/SearchBtn"
+                android:layout_width="27dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="41dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/ic_action_search"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/searchText"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="43dp"
+                android:textSize="8dp"
+                android:text="Search"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/chatIcon"
+                android:layout_width="24dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="42dp"
+                android:background="@drawable/ic_action_chat"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/chatText"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="45dp"
+                android:textSize="8dp"
+                android:text="Chat."
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

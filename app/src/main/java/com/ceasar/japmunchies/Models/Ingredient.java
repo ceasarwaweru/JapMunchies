@@ -7,14 +7,16 @@ public class Ingredient {
     private String mIngredientId;
     private String mIngredientThumbnail;
     private Bitmap mIngredientThumbnailBitmap;
+    private int imageId;
 
     public Ingredient(){}
 
-    public Ingredient(String name, String id, String imageThumb,Bitmap imageThumbBitmap){
+    public Ingredient(String name, String id, String imageThumb,Bitmap imageThumbBitmap,int imageId){
         this.mIngredientName = name;
         this.mIngredientId = id;
         this.mIngredientThumbnail = imageThumb;
         this.mIngredientThumbnailBitmap = imageThumbBitmap;
+        this.imageId = imageId;
     }
 
     public String getIngredientName() {
@@ -47,5 +49,13 @@ public class Ingredient {
 
     public void setIngredientThumbnailBitmap(Bitmap mIngredientThumbnailBitmap) {
         this.mIngredientThumbnailBitmap = mIngredientThumbnailBitmap;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

@@ -1,23 +1,32 @@
 package com.ceasar.japmunchies.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ceasar.japmunchies.Activities.SpecificRecipe;
+import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.R;
+import com.ceasar.japmunchies.Variables;
 
 import java.util.List;
 
 public class FeaturedRecipeAdapter extends RecyclerView.Adapter<FeaturedRecipeAdapter.ViewHolder> {
-    private List<String> mRecipes;
+    private List<Recipe> mRecipes;
+    private Activity mActivity;
 
     // Pass in the contact array into the constructor
-    public FeaturedRecipeAdapter(List<String> recipes) {
+    public FeaturedRecipeAdapter(List<Recipe> recipes, Activity activity) {
         mRecipes = recipes;
+        this.mActivity = activity;
     }
 
     @NonNull
@@ -32,10 +41,23 @@ public class FeaturedRecipeAdapter extends RecyclerView.Adapter<FeaturedRecipeAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        String recipeName = mRecipes.get(i);
+        final Recipe recipeName = mRecipes.get(i);
 
         TextView textView = viewHolder.mNameTextView;
-        textView.setText(recipeName);
+//        viewHolder.mRecipeImage.setImageBitmap(recipeName.getImageThumbnailBitmap());
+        viewHolder.mRecipeImage.setBackground(mActivity.getDrawable(recipeName.getImageId()));
+        textView.setText(recipeName.getName());
+
+        viewHolder.mViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Variables.chosenRecipe = recipeName;
+                Intent intent = new Intent(mActivity, SpecificRecipe.class);
+                mActivity.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
@@ -46,10 +68,14 @@ public class FeaturedRecipeAdapter extends RecyclerView.Adapter<FeaturedRecipeAd
 
     class ViewHolder extends RecyclerView.ViewHolder{
        TextView mNameTextView;
+       ImageView mRecipeImage;
+       Button mViewButton;
 
         ViewHolder(View itemView) {
             super(itemView);
             mNameTextView = itemView.findViewById(R.id.nameTextView);
+            mRecipeImage = itemView.findViewById(R.id.recipeImage);
+            mViewButton = itemView.findViewById(R.id.viewButton);
         }
     }
 

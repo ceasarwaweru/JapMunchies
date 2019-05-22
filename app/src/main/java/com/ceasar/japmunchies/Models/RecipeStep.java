@@ -6,14 +6,16 @@ public class RecipeStep {
     private String mStepExplanation;
     private String mStepThumbnail;
     private Bitmap mStepThumbnailBitmap;
+    private int imageId;
 
 
     public RecipeStep(){}
 
-    public RecipeStep(String mStepExplanation, String mStepThumbnail, Bitmap mStepThumbnailBitmap){
+    public RecipeStep(String mStepExplanation, String mStepThumbnail, Bitmap mStepThumbnailBitmap,int imageId){
         this.mStepExplanation = mStepExplanation;
         this.mStepThumbnail = mStepThumbnail;
         this.mStepThumbnailBitmap = mStepThumbnailBitmap;
+        this.imageId = imageId;
     }
 
     public String getStepExplanation() {
@@ -38,5 +40,13 @@ public class RecipeStep {
 
     public void setStepThumbnailBitmap(Bitmap mStepThumbnailBitmap) {
         this.mStepThumbnailBitmap = mStepThumbnailBitmap;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }
