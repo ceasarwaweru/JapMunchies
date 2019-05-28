@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/* Ill comment my code some other time when I feel like it.*/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Context mContext;
 
