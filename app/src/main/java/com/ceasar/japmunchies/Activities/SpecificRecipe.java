@@ -1,15 +1,18 @@
 package com.ceasar.japmunchies.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ceasar.japmunchies.Adapters.FeaturedRecipeAdapter;
 import com.ceasar.japmunchies.Adapters.IngredientAdapter;
+import com.ceasar.japmunchies.Fragments.SpecificRecipeStepFragment;
 import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.R;
 import com.ceasar.japmunchies.Services.DatabaseManager;
@@ -50,5 +53,15 @@ public class SpecificRecipe extends AppCompatActivity {
         IngredientAdapter adapter = new IngredientAdapter(mChosenRecipe.getRecipeIngredients(),SpecificRecipe.this);
         mIngredientsItemsRecyclerView.setAdapter(adapter);
         mIngredientsItemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        findViewById(R.id.viewButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Variables.chosenRecipe = mChosenRecipe;
+                Intent i = new Intent(SpecificRecipe.this,SpecificRecipeStepActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
