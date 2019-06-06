@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class SpecificRecipe extends AppCompatActivity {
     @Bind(R.id.recipeDescription) TextView mRecipeDescription;
     @Bind(R.id.recipeImage) ImageView mRecipeImage;
     @Bind(R.id.ingredientsItemsRecyclerView) RecyclerView mIngredientsItemsRecyclerView;
+    @Bind(R.id.chatButton) ImageButton chatButton;
 
 
     @Override
@@ -60,6 +62,15 @@ public class SpecificRecipe extends AppCompatActivity {
             public void onClick(View v) {
                 Variables.chosenRecipe = mChosenRecipe;
                 Intent i = new Intent(SpecificRecipe.this,SpecificRecipeStepActivity.class);
+                startActivity(i);
+            }
+        });
+
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SpecificRecipe.this,ChatActivity.class);
+                Variables.chosenRecipe = mChosenRecipe;
                 startActivity(i);
             }
         });
