@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.Models.RecipeStep;
 import com.ceasar.japmunchies.R;
@@ -60,7 +61,11 @@ public class SpecificRecipeStepFragment extends Fragment {
 
         ImageView image =  view.findViewById(R.id.recipeImage);
 //        image.setImageBitmap(mRecipeStep.getStepThumbnailBitmap());
-        image.setBackground(mContext.getDrawable(mRecipeStep.getImageId()));
+        if(mRecipeStep.getImageId()==0){
+            Glide.with(mContext).load(mRecipeStep.getStepThumbnail()).into(image);
+        }else {
+            image.setBackground(mContext.getDrawable(mRecipeStep.getImageId()));
+        }
 
         return view;
     }

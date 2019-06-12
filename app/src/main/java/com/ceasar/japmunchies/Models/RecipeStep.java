@@ -8,6 +8,8 @@ public class RecipeStep {
     private Bitmap mStepThumbnailBitmap;
     private int imageId;
 
+    private String imageUrl;
+
 
     public RecipeStep(){}
 
@@ -48,5 +50,13 @@ public class RecipeStep {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

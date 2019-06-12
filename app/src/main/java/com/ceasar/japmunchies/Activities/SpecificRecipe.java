@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ceasar.japmunchies.Adapters.FeaturedRecipeAdapter;
 import com.ceasar.japmunchies.Adapters.IngredientAdapter;
 import com.ceasar.japmunchies.Fragments.SpecificRecipeStepFragment;
@@ -50,7 +51,11 @@ public class SpecificRecipe extends AppCompatActivity {
         mRecipeName.setText(mChosenRecipe.getName());
         mRecipeDescription.setText(mChosenRecipe.getDescription());
         mRecipeImage.setImageBitmap(mChosenRecipe.getImageThumbnailBitmap());
-        mRecipeImage.setBackground(getDrawable(mChosenRecipe.getImageId()));
+        if(mChosenRecipe.getImageId()==0){
+            Glide.with(mContext).load(mChosenRecipe.getImageThumbnail()).into(mRecipeImage);
+        }else {
+            mRecipeImage.setBackground(getDrawable(mChosenRecipe.getImageId()));
+        }
 
         IngredientAdapter adapter = new IngredientAdapter(mChosenRecipe.getRecipeIngredients(),SpecificRecipe.this);
         mIngredientsItemsRecyclerView.setAdapter(adapter);

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ceasar.japmunchies.Models.Ingredient;
 import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.R;
@@ -43,6 +44,10 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
         viewHolder.ingredientName.setText(ingredient.getIngredientName());
 //        viewHolder.ingredientImage.setImageBitmap(ingredient.getIngredientThumbnailBitmap());
 //        viewHolder.ingredientImage.setBackground(mActivity.getDrawable(ingredient.getImageId()));
+
+        if(ingredient.getImageId()==0){
+            Glide.with(mActivity).load(ingredient.getIngredientThumbnail()).into(viewHolder.ingredientImage);
+        }
     }
 
     @Override

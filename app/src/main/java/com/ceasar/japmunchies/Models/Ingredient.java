@@ -9,6 +9,8 @@ public class Ingredient {
     private Bitmap mIngredientThumbnailBitmap;
     private int imageId;
 
+    private String imageUrl;
+
     public Ingredient(){}
 
     public Ingredient(String name, String id, String imageThumb,Bitmap imageThumbBitmap,int imageId){
@@ -57,5 +59,13 @@ public class Ingredient {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

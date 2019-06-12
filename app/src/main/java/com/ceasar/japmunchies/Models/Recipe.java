@@ -15,6 +15,7 @@ public class Recipe {
     private String mDescription;
     private List<Ingredient> mRecipeIngredients = new ArrayList<>();
     private int imageId;
+    private String imageUrl;
 
 
     public Recipe(){}
@@ -93,5 +94,13 @@ public class Recipe {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
