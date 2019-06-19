@@ -41,12 +41,12 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:layout_width="35dp"
+                    android:layout_width="20dp"
                     android:id="@+id/searchIcon"
                     android:layout_marginLeft="10dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_action_search"
-                    android:layout_height="35dp" />
+                    android:layout_height="20dp" />
 
                 <AutoCompleteTextView
                     android:id="@+id/searchEditText"
@@ -67,8 +67,6 @@
                     android:textSize="15sp" />
 
             </LinearLayout>
-
-
 
         </android.support.v7.widget.CardView>
 
@@ -208,6 +206,91 @@
 
 
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/searchViewBack"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:alpha="0"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/searchView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/SearchCardView"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cardCornerRadius="28dp"
+                    android:translationY="55dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/SearchField"
+                            android:translationX="35dp"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="3dp"
+                            android:inputType="textPersonName"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_height="48dp"
+                            android:background="@android:color/white"
+                            android:padding="10dp"
+                            android:ems="10"
+                            android:hint="Search here"
+                            android:cursorVisible="true"
+                            android:theme="@style/Autocomplete"
+                            android:textColor="@color/secondary_text"
+                            android:textColorHint="@color/colorPrimaryLight"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/suggestionsCard"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:translationY="55dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/SuggestionsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:scrollbars="none"
+                        android:layout_height="wrap_content">
+
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
