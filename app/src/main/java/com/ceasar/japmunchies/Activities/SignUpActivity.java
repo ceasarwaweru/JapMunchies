@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ceasar.japmunchies.R;
+import com.ceasar.japmunchies.Services.SharedPreferenceManager;
 import com.ceasar.japmunchies.Variables;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -174,6 +175,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     if(task.isSuccessful()){
                         Log.d(TAG,"authentication successful");
                         createFirebaseUserProfile(task.getResult().getUser());
+                        new SharedPreferenceManager(mContext).setNameInSharedPref(name);
+                        new SharedPreferenceManager(mContext).setEmailInSharedPref(email);
                     }else {
                         mRelative.setVisibility(View.VISIBLE);
 //                        mAvi.setVisibility(View.GONE);

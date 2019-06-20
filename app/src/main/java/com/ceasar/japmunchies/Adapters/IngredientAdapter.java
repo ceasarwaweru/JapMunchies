@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.ceasar.japmunchies.Models.Ingredient;
 import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.R;
@@ -46,7 +47,8 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
 //        viewHolder.ingredientImage.setBackground(mActivity.getDrawable(ingredient.getImageId()));
 
         if(ingredient.getImageId()==0){
-            Glide.with(mActivity).load(ingredient.getIngredientThumbnail()).into(viewHolder.ingredientImage);
+            Glide.with(mActivity).load(ingredient.getIngredientThumbnail()).apply(new RequestOptions().override(50, 50))
+                    .apply(RequestOptions.circleCropTransform()).into(viewHolder.ingredientImage);
         }
     }
 

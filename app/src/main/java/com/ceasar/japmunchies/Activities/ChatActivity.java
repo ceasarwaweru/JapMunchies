@@ -1,6 +1,7 @@
 package com.ceasar.japmunchies.Activities;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +17,10 @@ import com.ceasar.japmunchies.Adapters.MessagesAdapter;
 import com.ceasar.japmunchies.Models.MessageItem;
 import com.ceasar.japmunchies.Models.Recipe;
 import com.ceasar.japmunchies.R;
+import com.ceasar.japmunchies.Services.SharedPreferenceManager;
 import com.ceasar.japmunchies.Variables;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,12 +51,24 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void setStuff() {
-        List<MessageItem> testMessages = new ArrayList<>();
-        testMessages.add(new MessageItem("1","Hello World!","Dev Id","Dev","",mChosenRecipe.getRecipeId()));
-        testMessages.add(new MessageItem("2","Hello World, Again!","Dev Id","Dev2","",mChosenRecipe.getRecipeId()));
-        testMessages.add(new MessageItem("3","Good Recipe","Dev Id","Dev 3","",mChosenRecipe.getRecipeId()));
+        List<MessageItem> currentMessages = new ArrayList<>();
 
-        mMessagesAdapter = new MessagesAdapter(testMessages,ChatActivity.this);
+        Gson gson = new Gson();
+        SharedPreferences prefs = mContext.getSharedPreferences("Messages", MODE_PRIVATE);
+        String storedHashMapString = prefs.getString("Messages", "nil");
+
+        if(!storedHashMapString.equals("nil")) {
+            java.lang.reflect.Type type = new TypeToken<List<MessageItem>>() {}.getType();
+            currentMessages = gson.fromJson(storedHashMapString, type);
+        }
+        List<MessageItem> currentMessagesForSpecificRecipe = new ArrayList<>();
+        for(MessageItem item:currentMessages){
+            if(item.getmRecipeId().equals(mChosenRecipe.getRecipeId())){
+                currentMessagesForSpecificRecipe.add(item);
+            }
+        }
+
+        mMessagesAdapter = new MessagesAdapter(currentMessagesForSpecificRecipe,ChatActivity.this);
         messagesRecyclerView.setAdapter(mMessagesAdapter);
         messagesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -73,7 +89,7 @@ public class ChatActivity extends AppCompatActivity {
                 }else{
                     List<MessageItem> currentMessages = mMessagesAdapter.getCurrentMessages();
                     currentMessages.add(new MessageItem("X",message,"You"
-                            ,"Dev","",mChosenRecipe.getRecipeId()));
+                            ,new SharedPreferenceManager(mContext).loadNameInSharedPref(),"",mChosenRecipe.getRecipeId()));
 
                     mMessagesAdapter = new MessagesAdapter(currentMessages,ChatActivity.this);
                     messagesRecyclerView.setAdapter(mMessagesAdapter);
@@ -87,5 +103,18 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        List<MessageItem> currentMessages = mMessagesAdapter.getCurrentMessages();
+        if(!currentMessages.isEmpty()){
+            Gson gson = new Gson();
+            String userListString = gson.toJson(currentMessages);
+
+            SharedPreferences prefs = mContext.getSharedPreferences("Messages", MODE_PRIVATE);
+            prefs.edit().clear().putString("Messages", userListString).apply();
+        }
     }
 }

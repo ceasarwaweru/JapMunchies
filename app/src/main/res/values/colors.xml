@@ -14,4 +14,6 @@
     <color name="grey">#F3F3F3</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
+
+    <color name="black">#000000</color>
 </resources>

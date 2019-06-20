@@ -18,21 +18,15 @@
         <TextView
             android:id="@+id/senderName"
             android:layout_width="wrap_content"
-            android:textSize="17sp"
-            android:layout_marginLeft="20dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="1dp"
+            android:textStyle="bold"
             android:layout_marginBottom="1dp"
             android:textColor="@color/accent"
             android:text="User Name."
             android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:background="@color/accent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="1px"/>
 
         <TextView
             android:id="@+id/commentText"

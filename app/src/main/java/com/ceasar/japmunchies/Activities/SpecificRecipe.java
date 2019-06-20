@@ -2,6 +2,7 @@ package com.ceasar.japmunchies.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +34,7 @@ public class SpecificRecipe extends AppCompatActivity {
     @Bind(R.id.recipeImage) ImageView mRecipeImage;
     @Bind(R.id.ingredientsItemsRecyclerView) RecyclerView mIngredientsItemsRecyclerView;
     @Bind(R.id.chatButton) ImageButton chatButton;
+    @Bind(R.id.shareRecipe) ImageButton shareRecipe;
 
 
     @Override
@@ -77,6 +79,19 @@ public class SpecificRecipe extends AppCompatActivity {
                 Intent i = new Intent(SpecificRecipe.this,ChatActivity.class);
                 Variables.chosenRecipe = mChosenRecipe;
                 startActivity(i);
+            }
+        });
+
+        shareRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = ShareCompat.IntentBuilder.from(SpecificRecipe.this)
+                        .setType("text/plain")
+                        .setText("Check out "+mChosenRecipe.getName()+", a japanese food recipe in JapMunchies.")
+                        .getIntent();
+                if (shareIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(shareIntent);
+                }
             }
         });
     }

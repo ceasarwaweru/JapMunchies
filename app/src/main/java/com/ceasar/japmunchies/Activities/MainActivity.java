@@ -3,6 +3,7 @@ package com.ceasar.japmunchies.Activities;
 import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import com.ceasar.japmunchies.Adapters.FeaturedRecipeAdapter;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.suggestionsCard) CardView suggestionsCard;
     @Bind(R.id.SuggestionsRecyclerView) RecyclerView SuggestionsRecyclerView;
     @Bind(R.id.SearchField) AutoCompleteTextView SearchField;
+    @Bind(R.id.chatIcon) ImageButton mChatIcon;
+    @Bind(R.id.ShareAppBtn) ImageButton ShareAppBtn;
 
     private LinkedHashMap<String,Recipe> qualifiedRecipes = new LinkedHashMap<>();
     private boolean isSearchViewOpen = false;
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addFeaturedItems();
 
         mSearchEditText.setOnClickListener(this);
+        mChatIcon.setOnClickListener(this);
     }
 
     private void addFeaturedItems() {
@@ -70,6 +75,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.equals(mSearchEditText)) showSearchPart();
+        else if(v.equals(mChatIcon)){
+            Intent intent = new Intent(MainActivity.this,AccountActivity.class);
+            startActivity(intent);
+        }else if(v.equals(ShareAppBtn)){
+            Intent shareIntent = ShareCompat.IntentBuilder.from(MainActivity.this)
+                    .setType("text/plain")
+                    .setText("Check out JapMunchies, a japanese food recipes app.")
+                    .getIntent();
+            if (shareIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(shareIntent);
+            }
+        }
     }
 
     private void showSearchPart(){
